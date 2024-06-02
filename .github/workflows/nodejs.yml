@@ -39,3 +39,35 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_DEFAULT_REGION: eu-north-1
+
+  notify:
+    runs-on: ubuntu-latest
+    needs: build
+    if: always() # Run this job even if the previous jobs fail
+
+    steps:
+    - name: Send email on success
+      if: ${{ job.status == 'success' }}
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com
+        server_port: 587
+        username: ${{ secrets.GMAIL_USERNAME }}
+        password: ${{ secrets.GMAIL_PASSWORD }}
+        subject: 'GitHub Actions - Build Successful'
+        to: your_email@example.com
+        from: ${{ secrets.GMAIL_USERNAME }}
+        body: 'Your GitHub Actions workflow has completed successfully.'
+
+    - name: Send email on failure
+      if: ${{ job.status == 'failure' }}
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com
+        server_port: 587
+        username: ${{ secrets.GMAIL_USERNAME }}
+        password: ${{ secrets.GMAIL_PASSWORD }}
+        subject: 'GitHub Actions - Build Failed'
+        to: your_email@example.com
+        from: ${{ secrets.GMAIL_USERNAME }}
+        body: 'Your GitHub Actions workflow has failed.'
