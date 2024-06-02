@@ -15,5 +15,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20.9.0'
+      - run: npm install  --prefix ./nodejs
       - run: npm run build --prefix ./nodejs
    
