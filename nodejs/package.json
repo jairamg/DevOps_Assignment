@@ -4,7 +4,8 @@
   "description": "Sample Node.js backend",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "mocha"
   },
   "dependencies": {
     "express": "^4.17.1"
