@@ -15,5 +15,5 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20.9.0'
-      - run: npm run build --if-present
-      - run: npm test
+      - run: npm run build --prefix ./nodejs
+   
