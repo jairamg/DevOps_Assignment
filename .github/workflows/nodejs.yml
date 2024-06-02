@@ -55,7 +55,7 @@ jobs:
         username: ${{ secrets.GMAIL_USERNAME }}
         password: ${{ secrets.GMAIL_PASSWORD }}
         subject: 'GitHub Actions - Build Successful'
-        to: your_email@example.com
+        to: jai1992.jce@gmail.com
         from: ${{ secrets.GMAIL_USERNAME }}
         body: 'Your GitHub Actions workflow has completed successfully.'
 
@@ -68,6 +68,6 @@ jobs:
         username: ${{ secrets.GMAIL_USERNAME }}
         password: ${{ secrets.GMAIL_PASSWORD }}
         subject: 'GitHub Actions - Build Failed'
-        to: your_email@example.com
+        to: jai1992.jce@gmail.com
         from: ${{ secrets.GMAIL_USERNAME }}
         body: 'Your GitHub Actions workflow has failed.'
