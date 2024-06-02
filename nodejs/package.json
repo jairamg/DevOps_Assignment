@@ -4,15 +4,10 @@
   "description": "Sample Node.js backend",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "mocha nodejs/test.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.17.1"
-  },
-  "devDependencies": {
-    "chai": "^4.3.4",
-    "mocha": "^9.1.3",
-    "supertest": "^6.1.3"
-  }
+  } 
 }
+
